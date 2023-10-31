@@ -1,1 +1,18 @@
-<p>create-update works!</p>
+<form (ngSubmit)="createOrUpdate()">
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" name="_id" [(ngModel)]="country._id" class="form-control"/>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="country.name" class="form-control"/>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="capital">Capital</label>
+        <input type="text" name="capital" [(ngModel)]="country.capital" class="form-control"/>
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CountryService } from '../../shared/country.service';
+import {Country} from '../../country'
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private countryService:CountryService) { }
 
   ngOnInit(): void {
+  }
+
+  newCountry(event:any) {
+    event.preventDefault();
+    this.countryService.setter(new Country());
+    this.router.navigate(['/createUpdate'])
   }
 
 }

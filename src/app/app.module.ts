@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { CreateUpdateComponent } from './component/create-update/create-update.component';
 import { ListComponent } from './component/list/list.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import {CountryService} from './shared/country.service';
+import { CountryService } from './shared/country.service';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes:Routes=[
@@ -25,7 +26,8 @@ const appRoutes:Routes=[
     BrowserModule,
     AppRoutingModule,
      HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
   ],
   providers: [CountryService],
   bootstrap: [AppComponent]
